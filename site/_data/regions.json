@@ -1,17 +1,10 @@
 [
-  { "label": "Rheydt", "href": "/regionen/rheydt/", "blurb": "Stadtteil von Mönchengladbach – Local SEO, Google Ads & Websites für Rheydter Unternehmen" },
-  { "label": "Wickrath", "href": "/regionen/wickrath/", "blurb": "Historischer Stadtteil – Online Marketing für lokale Betriebe in Wickrath" },
-  { "label": "Odenkirchen", "href": "/regionen/odenkirchen/", "blurb": "Stadtteil im Süden – Local SEO & Google Ads für Odenkirchener Unternehmen" },
-  { "label": "Giesenkirchen", "href": "/regionen/giesenkirchen/", "blurb": "Östlicher Stadtteil – Online Marketing für Betriebe in Giesenkirchen" },
-  { "label": "Hardterbroich", "href": "/regionen/hardterbroich/", "blurb": "Stadtteil MG – Local SEO, Google Ads & Websites für Hardterbroich" },
-  { "label": "Holt", "href": "/regionen/holt/", "blurb": "Stadtteil MG – Online Marketing für Unternehmen in Holt" },
-  { "label": "Geistenbeck", "href": "/regionen/geistenbeck/", "blurb": "Stadtteil MG – Local SEO & Google Ads für Geistenbeck" },
-  { "label": "Eicken", "href": "/regionen/eicken/", "blurb": "Stadtteil MG – Online Marketing für Eickener Betriebe" },
-  { "label": "Rheindahlen", "href": "/regionen/rheindahlen/", "blurb": "Westlicher Stadtteil – Local SEO, Google Ads & Websites für Rheindahlen" },
-  { "label": "Korschenbroich", "href": "/regionen/korschenbroich/", "blurb": "Wachsende Gemeinde – Local SEO & Google Ads für Korschenbroicher Unternehmen" },
-  { "label": "Grevenbroich", "href": "/regionen/grevenbroich/", "blurb": "Wirtschaftsstandort Rhein – Online Marketing für Grevenbroicher Betriebe" },
-  { "label": "Erkelenz", "href": "/regionen/erkelenz/", "blurb": "Kreis Heinsberg – Local SEO, Google Ads & Websites für Erkelenzer Unternehmen" },
-  { "label": "MG Süd", "href": "/regionen/moenchengladbach-sued/", "blurb": "Mönchengladbach Süd – Local SEO & Online Marketing" },
-  { "label": "MG Nord", "href": "/regionen/moenchengladbach-nord/", "blurb": "Mönchengladbach Nord – Local SEO & Online Marketing" },
-  { "label": "MG Ost", "href": "/regionen/moenchengladbach-ost/", "blurb": "Mönchengladbach Ost – Local SEO & Online Marketing" }
+  { "label": "Rheydt", "href": "/regionen/rheydt/", "blurb": "Eigenes Zentrum & Schloss Rheydt – Local SEO und Ads für Rheydter Betriebe" },
+  { "label": "Wickrath", "href": "/regionen/wickrath/", "blurb": "Südlicher Stadtteil mit Schloss Wickrath – Online Marketing für lokale Betriebe" },
+  { "label": "Odenkirchen", "href": "/regionen/odenkirchen/", "blurb": "Ortskern im Süden – Sichtbarkeit für Handwerk & Dienstleister in Odenkirchen" },
+  { "label": "Giesenkirchen", "href": "/regionen/giesenkirchen/", "blurb": "Östlicher Stadtteil – Local SEO für Praxen, Handwerk und Läden in Giesenkirchen" },
+  { "label": "Rheindahlen", "href": "/regionen/rheindahlen/", "blurb": "Westlicher Ortskern – Maps- & Profil-Optimierung für Rheindahlen" },
+  { "label": "Korschenbroich", "href": "/regionen/korschenbroich/", "blurb": "Eigene Gemeinde neben MG – Local SEO & Google Ads für Korschenbroich" },
+  { "label": "Grevenbroich", "href": "/regionen/grevenbroich/", "blurb": "Wirtschaftsstandort am Rhein – SEO, Ads und Websites für Grevenbroich" },
+  { "label": "Erkelenz", "href": "/regionen/erkelenz/", "blurb": "Kreis Heinsberg – Local SEO und Online Marketing für Erkelenz" }
 ]

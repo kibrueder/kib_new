@@ -51,6 +51,77 @@
   to = "/impressum/"
   status = 301
 
+# Thin / near-duplicate region pages → hub (GSC duplicate canonical)
+[[redirects]]
+  from = "/regionen/holt"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/holt/"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/hardterbroich"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/hardterbroich/"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/geistenbeck"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/geistenbeck/"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/eicken"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/eicken/"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/moenchengladbach-nord"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/moenchengladbach-nord/"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/moenchengladbach-ost"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/moenchengladbach-ost/"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/moenchengladbach-sued"
+  to = "/regionen/"
+  status = 301
+
+[[redirects]]
+  from = "/regionen/moenchengladbach-sued/"
+  to = "/regionen/"
+  status = 301
+
 [[headers]]
   for = "/*"
   [headers.values]
