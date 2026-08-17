@@ -5,6 +5,7 @@ description: "Mehr Kunden über Google: Local SEO, Anzeigen und KI-Automatisieru
 bilingual: true
 hasForms: false
 permalink: /
+storyJs: true
 schema:
   "@context": "https://schema.org"
   "@graph":
@@ -59,57 +60,4 @@ schema:
       "publisher":
         "@id": "https://kibrueder.de/#business"
 ---
-
-{% include "home-hero.njk" %}
-{% include "home-timeline.njk" %}
-
-<!-- Services -->
-<section id="services" class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
-  <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center" data-animate data-i18n="services.title">
-    Local SEO, Google Ads &amp; KI
-  </h2>
-  <p class="text-gray-600 dark:text-gray-400 text-lg mb-12 text-center max-w-3xl mx-auto" data-animate data-i18n="services.subtitle">
-    Die Leistungen, mit denen lokale Unternehmen bei Google mehr Anfragen gewinnen.
-  </p>
-
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {% set href = "/local-seo/" %}
-    {% set title = "Local SEO" %}
-    {% set features = ["In Google Maps gefunden werden", "Mehr Anrufe aus der Region", "Website, die überzeugt"] %}
-    {% set icon = "icons/settings.njk" %}
-    {% set titleKey = "services.seo.title" %}
-    {% set featureKeys = ["services.seo.feature1", "services.seo.feature2", "services.seo.feature3"] %}
-    {% include "service-card.njk" %}
-
-    {% set href = "/ads/" %}
-    {% set title = "Google Ads & Online Marketing" %}
-    {% set features = ["Google Ads", "Meta Ads (Facebook & Instagram)", "Performance-Optimierung"] %}
-    {% set icon = "icons/mail.njk" %}
-    {% set titleKey = "services.ads.title" %}
-    {% set featureKeys = ["services.ads.feature1", "services.ads.feature2", "services.ads.feature3"] %}
-    {% include "service-card.njk" %}
-
-    {% set href = "/ai/" %}
-    {% set title = "KI Lösungen" %}
-    {% set features = ["KI-Chat", "KI-Anrufassistent", "Automatisierungen"] %}
-    {% set icon = "icons/message-circle.njk" %}
-    {% set titleKey = "services.ai.title" %}
-    {% set featureKeys = ["services.ai.feature1", "services.ai.feature2", "services.ai.feature3"] %}
-    {% include "service-card.njk" %}
-  </div>
-</section>
-
-{% include "home-ai-visibility.njk" %}
-
-<!-- Final CTA -->
-<section class="py-20 px-4 md:px-8 max-w-7xl mx-auto text-center">
-  <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="cta.title">
-    Wollen Sie mehr Anfragen?
-  </h2>
-  <p class="text-gray-600 dark:text-gray-400 text-lg mb-8 max-w-2xl mx-auto" data-i18n="cta.subtitle">
-    In 30 Minuten zeigen wir Ihnen konkret, was für Ihr Unternehmen Sinn macht.
-  </p>
-  <a href="/kontakt/" class="inline-block bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all" data-i18n="hero.cta.book">
-    Kostenloses Gespräch (30 Min.)
-  </a>
-</section>
+{% include "home-story.njk" %}

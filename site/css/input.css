@@ -1295,24 +1295,6 @@ html:not(.dark) .story-proof-stats {
   color: var(--story-btn-text) !important;
 }
 
-.story-cta-alt {
-  display: block;
-  width: 100%;
-  margin-top: 1.1rem;
-  text-align: center;
-  font-size: 0.95rem;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--story-muted);
-  text-decoration: underline;
-  text-underline-offset: 0.22em;
-  text-decoration-thickness: 1px;
-}
-
-.story-cta-alt:hover {
-  color: var(--story-fg);
-}
-
 /* Map */
 .story-map-block {
   margin-top: 1.5rem;
@@ -1448,6 +1430,10 @@ html:not(.dark) .story-proof-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.9rem 1rem;
+}
+
+.story-card-stats .is-hot .story-proof-stat-n {
+  color: var(--story-accent-bright);
 }
 
 .story-card-stats + .story-case-note {

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const port = Number(process.env.PREVIEW_PORT || 8080);
-const previewUrl = process.env.PREVIEW_URL || `http://localhost:${port}/v2/`;
+const previewUrl = process.env.PREVIEW_URL || `http://localhost:${port}/`;
 const logPath = path.join(root, '.preview-dev.log');
 
 function portOpen(host, p) {
