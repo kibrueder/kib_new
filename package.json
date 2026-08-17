@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm-run-all --parallel css:watch eleventy:serve",
+    "ensure-preview": "node scripts/ensure-preview.js",
     "build": "npm run css:build && npm run eleventy:build && npm run config:inject",
     "css:build": "tailwindcss -i ./site/css/input.css -o ./_site/css/main.css --minify",
     "css:watch": "tailwindcss -i ./site/css/input.css -o ./_site/css/main.css --watch",

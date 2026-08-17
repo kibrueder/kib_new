@@ -106,7 +106,6 @@
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in-up');
-          entry.target.classList.remove('opacity-0');
           observer.unobserve(entry.target);
         }
       });
@@ -115,7 +114,6 @@
   );
 
   document.querySelectorAll('[data-animate]').forEach((el) => {
-    el.classList.add('opacity-0');
     observer.observe(el);
   });
 

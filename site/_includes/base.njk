@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de" class="dark">
+<html lang="de">
 <head>
   {% include "head.njk" %}
 </head>
-<body class="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white">
+<body class="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white{% if storyJs %} story-v2-body{% endif %}">
   {% include "navbar.njk" %}
 
   <main>
@@ -16,7 +16,10 @@
   <script src="/js/config.js"></script>
   <script src="/js/main.js" defer></script>
   {% if bilingual %}
-  <script src="/js/i18n.js?v=20260723" defer></script>
+  <script src="/js/i18n.js?v=20260848" defer></script>
+  {% endif %}
+  {% if storyJs %}
+  <script src="/js/story-v2.js?v=20260846" defer></script>
   {% endif %}
   {% if hasForms %}
   <script type="module" src="/js/forms.js"></script>
