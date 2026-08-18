@@ -19,7 +19,7 @@ function scrollToFormFeedback(id) {
   el.focus({ preventScroll: true });
 }
 
-// —— Contact form ——
+// Contact form 
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
@@ -90,7 +90,7 @@ if (contactForm) {
   });
 }
 
-// —— Newsletter form ——
+// Newsletter form 
 const newsletterForm = document.getElementById('newsletter-form');
 if (newsletterForm) {
   newsletterForm.addEventListener('submit', async (e) => {

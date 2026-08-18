@@ -61,7 +61,7 @@
     el.addEventListener('click', scrollToServices);
   });
 
-  // Google Analytics — only after cookie accept
+  // Google Analytics, only after cookie accept
   function loadAnalytics() {
     const gaId = window.SITE_GA_ID;
     if (!gaId || window.__gaLoaded) return;

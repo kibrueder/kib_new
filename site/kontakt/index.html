@@ -47,17 +47,25 @@ schema:
           "opens": "09:00"
           "closes": "19:00"
 ---
-<div class="pt-20">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-center" data-i18n="contact.title">Kostenloses Gespräch</h1>
-    <p class="text-gray-600 dark:text-gray-400 text-lg mb-12 text-center max-w-2xl mx-auto" data-i18n="contact.intro">
-      30 Minuten. Kein Verkaufsdruck. Wir sagen Ihnen klar, was für Ihr Unternehmen Sinn macht.
-    </p>
+<div class="inner-contact">
+  <div class="inner-contact-grid">
+    <div class="inner-contact-copy">
+      <p class="inner-kicker" data-i18n="contact.kicker">Wenn Sie soweit sind</p>
+      <h1 data-i18n="contact.title">Lassen Sie uns reden.</h1>
+      <p class="lead" data-i18n="contact.intro">
+        Dreißig Minuten, kein Pitch-Deck. Wir ziehen Ihre Rankings live, zeigen wo Anfragen verloren gehen, und sagen geradeheraus, ob wir helfen können.
+      </p>
+      <ul class="inner-contact-steps">
+        <li data-i18n="contact.step1">Sie füllen das Formular aus, Name, Firma, Telefon und woran es hakt.</li>
+        <li data-i18n="contact.step2">Wir prüfen vor dem Gespräch Rankings, Wettbewerb und Ihre Angaben.</li>
+        <li data-i18n="contact.step3">Wir melden uns zurück und holen Sie in den Kalender.</li>
+      </ul>
+    </div>
 
-    <div class="max-w-3xl mx-auto mb-16 bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-lg">
-      <h2 class="text-2xl font-bold mb-6" data-i18n="contact.form.title">Kostenloses Gespräch anfragen</h2>
+    <div class="inner-form-card">
+      <h2 data-i18n="contact.form.title">Kostenloses Gespräch anfragen</h2>
       <p class="text-gray-600 dark:text-gray-400 mb-8" data-i18n="contact.form.subtitle">
-        Erzählen Sie uns von Ihrem Projekt – wir melden uns in Kürze.
+        Diese Felder brauchen wir, um vorab recherchieren und Sie sinnvoll zurückrufen zu können.
       </p>
 
       <div id="contact-success" class="hidden bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-8">
@@ -141,13 +149,15 @@ schema:
           </div>
 
           <button type="submit" data-i18n="contact.form.submit"
-            class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
+            class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
             Kostenloses Gespräch anfragen
           </button>
         </div>
       </form>
     </div>
+  </div>
 
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
     {% set compact = true %}
     {% set sectionId = "kontakt-leistungen" %}
     {% include "main-services.njk" %}

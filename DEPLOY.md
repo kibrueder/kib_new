@@ -1,4 +1,4 @@
-# KIBrueder — Deploy & Workflow
+# KIBrueder, Deploy & Workflow
 
 Static HTML site built with Eleventy + Tailwind. Source lives in `site/`. Production output is `_site/`.
 
@@ -12,9 +12,9 @@ Static HTML site built with Eleventy + Tailwind. Source lives in `site/`. Produc
    - **Build command:** `npm run build`
    - **Publish directory:** `_site`
    - **Node version:** 20
-4. **Site configuration → Environment variables** — add if you use the newsletter:
-   - `SUPABASE_URL` — your Supabase project URL
-   - `SUPABASE_ANON_KEY` — public anon key (RLS-protected)
+4. **Site configuration → Environment variables**, add if you use the newsletter:
+   - `SUPABASE_URL`, your Supabase project URL
+   - `SUPABASE_ANON_KEY`, public anon key (RLS-protected)
 5. Trigger a deploy (push to `main` or “Deploy site”).
 
 ## Daily workflow (Cursor → Live)

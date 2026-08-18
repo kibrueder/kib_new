@@ -1,6 +1,6 @@
 /**
  * Clean exported service page HTML without re-parsing (preserves structure).
- * Same approach as clean-region-pages.js — no Cheerio, no Prettier.
+ * Same approach as clean-region-pages.js, no Cheerio, no Prettier.
  */
 import fs from 'fs';
 import path from 'path';

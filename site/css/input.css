@@ -68,7 +68,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* Self-hosted Inter (latin + latin-ext) — body & UI on /v2/ */
+/* Self-hosted Inter (latin + latin-ext): body & UI on /v2/ */
 @font-face {
   font-family: "Inter";
   font-style: normal;
@@ -169,7 +169,7 @@
   }
 }
 
-/* Shared card hover — same feel as homepage service cards.
+/* Shared card hover: same feel as homepage service cards.
    Unlayered so border color wins over Tailwind dark:border-* utilities. */
 .hover-card {
   position: relative;
@@ -217,7 +217,7 @@
   opacity: 1;
 }
 
-/* Site-wide gold CTAs (v2 look) — skip gradient text clips */
+/* Site-wide gold CTAs (v2 look): skip gradient text clips */
 a.bg-gradient-to-r.from-yellow-500.to-orange-500:not(.text-transparent),
 button.bg-gradient-to-r.from-yellow-500.to-orange-500:not(.text-transparent) {
   background-image: none !important;
@@ -365,7 +365,7 @@ main .rounded-xl.border.border-gray-200:hover :is(h3) {
 .animate-delay-400 { animation-delay: 400ms; }
 .animate-delay-500 { animation-delay: 500ms; }
 
-/* Hero motion — GPU-friendly transforms only (no stroke-dashoffset) */
+/* Hero motion: GPU-friendly transforms only (no stroke-dashoffset) */
 @keyframes heroLinesDriftA {
   0%, 100% { transform: translate3d(-1.5%, 1%, 0); }
   50% { transform: translate3d(1.5%, -1.5%, 0); }
@@ -452,7 +452,7 @@ main .rounded-xl.border.border-gray-200:hover :is(h3) {
   transition: height 0.1s linear;
 }
 
-/* —— Story homepage (/v2/) — Syvex layout: copy left, stage word right —— */
+/* Story homepage (/v2/): Syvex layout, copy left, stage word right */
 .story-v2-body {
   --story-bg: #000;
   --story-fg: #fff;
@@ -715,7 +715,7 @@ html.light .story-v2-body #main-nav #theme-toggle-mobile .theme-icon-sun {
     linear-gradient(90deg, var(--story-grid-line) 1px, transparent 1px) 0 0 / 5.6rem 100%;
 }
 
-/* Fixed stage word — right side */
+/* Fixed stage word: right side */
 .story-stage {
   position: fixed;
   z-index: 1;
@@ -843,7 +843,7 @@ html.light .story-v2-body #main-nav #theme-toggle-mobile .theme-icon-sun {
   text-underline-offset: 2px;
 }
 
-/* Panels — left copy column */
+/* Panels: left copy column */
 .story-panel {
   position: relative;
   z-index: 2;
@@ -1526,4 +1526,157 @@ html:not(.dark) .story-proof-stats {
   .story-cta-btn:hover {
     transform: none;
   }
+}
+
+/* Inner pages: same type, orange, cards as the homepage */
+.inner-page {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+.inner-page a.text-yellow-600,
+.inner-page a.text-yellow-500,
+.inner-page a.text-yellow-400,
+.inner-page a.text-yellow-700,
+.inner-page a.text-yellow-800,
+.inner-page .text-yellow-600,
+.inner-page .text-yellow-500,
+.inner-page .text-yellow-400,
+.inner-page .text-yellow-700,
+.inner-page .dark\:text-yellow-400,
+.inner-page .dark\:text-yellow-300,
+.inner-page .dark\:text-yellow-500,
+.inner-page .dark\:text-yellow-400 {
+  color: var(--brand-gold) !important;
+}
+
+.inner-page a.hover\:text-yellow-500:hover,
+.inner-page a.hover\:text-yellow-700:hover,
+.inner-page .group-hover\:text-yellow-500:hover,
+.inner-page .group:hover .group-hover\:text-yellow-500,
+.inner-page .group:hover .group-hover\:text-yellow-400 {
+  color: var(--brand-gold-hover) !important;
+}
+
+.inner-page span.uppercase.tracking-widest,
+.inner-page .inner-kicker {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+.inner-page .bg-yellow-50,
+.inner-page .dark\:bg-yellow-900\/10,
+.inner-page .bg-yellow-500\/10 {
+  background: rgba(234, 140, 28, 0.08) !important;
+}
+
+.inner-page .border-yellow-200,
+.inner-page .dark\:border-yellow-800,
+.inner-page .border-yellow-500\/50 {
+  border-color: rgba(234, 140, 28, 0.35) !important;
+}
+
+.inner-page .text-yellow-700,
+.inner-page .dark\:text-yellow-400 {
+  color: var(--brand-gold) !important;
+}
+
+.inner-page input:focus,
+.inner-page select:focus,
+.inner-page textarea:focus {
+  outline: none;
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 0 0 2px rgba(234, 140, 28, 0.35);
+}
+
+.inner-contact {
+  padding-top: 6.5rem;
+  padding-bottom: 4rem;
+}
+
+.inner-contact-grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 960px) {
+  .inner-contact-grid {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: 3.5rem;
+    align-items: start;
+    padding: 0 2rem;
+  }
+}
+
+.inner-contact-copy h1 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0.4rem 0 1rem;
+}
+
+.inner-contact-copy .lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+  max-width: 36rem;
+}
+
+.dark .inner-contact-copy .lead {
+  color: #a8a8a8;
+}
+
+.inner-contact-steps {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+.inner-contact-steps li {
+  position: relative;
+  padding: 0.65rem 0 0.65rem 1.4rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.dark .inner-contact-steps li {
+  color: #a8a8a8;
+}
+
+.inner-contact-steps li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: var(--brand-gold);
+}
+
+.inner-form-card {
+  border: 1px solid rgba(234, 140, 28, 0.22);
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  background: #fff;
+}
+
+.dark .inner-form-card {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.inner-form-card h2 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-weight: 650;
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
 }
