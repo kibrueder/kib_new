@@ -240,7 +240,7 @@
       'v2.badge': 'Draft /v2/',
       'v2.banner': 'Draft: new homepage · You are on /v2/ · Live site stays at /',
       'v2.bannerLive': 'Go to live homepage',
-      'v2.stage.w0': 'MORE CALLS',
+      'v2.stage.w0': 'MORE INQUIRIES',
       'v2.stage.w1': 'WEBSITES',
       'v2.stage.w2': 'LOCAL SEO',
       'v2.stage.w3': 'GOOGLE ADS',
@@ -254,10 +254,10 @@
       'v2.nav.proof': 'Proof',
       'v2.nav.talk': "Let's talk",
       'v2.hero.kicker': 'Local SEO · Google Ads · AI',
-      'v2.hero.line1': 'Your competitors are getting the calls.',
-      'v2.hero.line2': 'We flip that.',
+      'v2.hero.line1': 'Want more inquiries?',
+      'v2.hero.line2': 'We’ll handle that.',
       'v2.hero.sub': 'Website, local SEO, Google Ads and AI, step by step, until the calendar is full. We measure in inquiries and booked work, not clicks.',
-      'v2.hero.cta': 'Book your 30-minute strategy call',
+      'v2.hero.cta': 'Free strategy call',
       'v2.hero.scroll': '◢ Scroll to explore ◣',
       'v2.hero.stat1': 'Google rank',
       'v2.hero.stat2': 'Top 3 visibility',
@@ -282,14 +282,15 @@
       'v2.seo.stat3val': '5 months',
       'v2.seo.before': 'Before',
       'v2.seo.after': 'After',
-      'v2.seo.mapLabelBefore': 'Before. Google Maps ranking by area, lower is better',
-      'v2.seo.mapLabelAfter': 'After. Google Maps ranking by area, lower is better',
-      'v2.seo.toggleAfter': 'See it after KI Brueder SEO',
-      'v2.seo.toggleBefore': 'View before again',
+      'v2.seo.mapLabelBefore': 'Before. Google Maps ranking by area',
+      'v2.seo.mapLabelAfter': 'After. Google Maps ranking by area',
+      'v2.seo.toggleAfter': 'After',
+      'v2.seo.toggleBefore': 'Before',
       'v2.seo.toggleAria': 'Show ranking heatmap before or after',
+      'v2.seo.mapAltBefore': 'Local SEO heatmap before: mostly red and orange rankings',
+      'v2.seo.mapAltAfter': 'Local SEO heatmap after: mostly green top rankings',
       'v2.seo.captionBefore': 'February 2026: almost every point rank 20 or worse.',
       'v2.seo.captionAfter': 'July 2026: average position 2.1, top 3 in 80% of searches.',
-      'v2.seo.client': 'zivaclean commercial cleaning, Langenfeld. Keyword “Gebäudereinigung Langenfeld”.',
       'v2.seo.link': 'More about local SEO',
       'v2.seo.case': 'Full zivaclean case study',
       'v2.ads.phase': 'Phase 3 · Google Ads',
@@ -329,7 +330,7 @@
       'v2.talk.phase': 'Ready when you are',
       'v2.talk.title': "Let's talk.",
       'v2.talk.text': "Thirty minutes, no pitch deck. We'll pull your current rankings live, show where leads are leaking, and tell you straight whether we can help.",
-      'v2.talk.cta': 'Book your 30-minute strategy call',
+      'v2.talk.cta': 'Free strategy call',
     },
     de: {
       'nav.home': 'Startseite',
@@ -569,7 +570,7 @@
       'v2.badge': 'Entwurf /v2/',
       'v2.banner': 'Entwurf: neue Startseite · Sie sind auf /v2/ · Live-Seite bleibt unter /',
       'v2.bannerLive': 'Zur Live-Startseite',
-      'v2.stage.w0': 'MEHR ANRUFE',
+      'v2.stage.w0': 'MEHR ANFRAGEN',
       'v2.stage.w1': 'WEBSITE',
       'v2.stage.w2': 'LOCAL SEO',
       'v2.stage.w3': 'GOOGLE ADS',
@@ -583,10 +584,10 @@
       'v2.nav.proof': 'Beweis',
       'v2.nav.talk': 'Gespräch',
       'v2.hero.kicker': 'Local SEO · Google Ads · KI',
-      'v2.hero.line1': 'Ihre Konkurrenz bekommt die Anrufe.',
-      'v2.hero.line2': 'Wir drehen das.',
+      'v2.hero.line1': 'Sie wollen mehr Anfragen?',
+      'v2.hero.line2': 'Wir regeln das.',
       'v2.hero.sub': 'Website, Local SEO, Google Ads und KI – Schritt für Schritt, bis der Kalender voll ist. Wir messen in Anfragen und Aufträgen, nicht in Klicks.',
-      'v2.hero.cta': 'Kostenloses Strategiegespräch buchen (30 Min.)',
+      'v2.hero.cta': 'Kostenloses Strategiegespräch',
       'v2.hero.scroll': '◢ Scrollen ◣',
       'v2.hero.stat1': 'Platz bei Google',
       'v2.hero.stat2': 'Top-3-Sichtbarkeit',
@@ -607,12 +608,13 @@
       'v2.seo.text': 'Wenn die Website konvertiert, machen wir Sie findbar. Google-Unternehmensprofil, Einträge und lokale Seiten – damit bei der Suche in der Nähe Ihr Name kommt, nicht der der Konkurrenz.',
       'v2.seo.before': 'Vorher',
       'v2.seo.after': 'Nachher',
-      'v2.seo.mapLabelBefore': 'Vorher. Google-Maps-Ranking nach Gebiet – niedriger ist besser',
-      'v2.seo.mapLabelAfter': 'Nachher. Google-Maps-Ranking nach Gebiet – niedriger ist besser',
-      'v2.seo.toggleAfter': 'Nachher mit KI Brueder SEO ansehen',
-      'v2.seo.toggleBefore': 'Vorher nochmal ansehen',
+      'v2.seo.mapLabelBefore': 'Vorher. Google-Maps-Ranking nach Gebiet',
+      'v2.seo.mapLabelAfter': 'Nachher. Google-Maps-Ranking nach Gebiet',
+      'v2.seo.toggleAfter': 'Nachher',
+      'v2.seo.toggleBefore': 'Vorher',
       'v2.seo.toggleAria': 'Heatmap vorher oder nachher',
-      'v2.seo.client': 'zivaclean Gebäudereinigung, Langenfeld. Keyword „Gebäudereinigung Langenfeld“. 5 Monate Local SEO.',
+      'v2.seo.mapAltBefore': 'Local-SEO-Heatmap vorher: überwiegend rot und orange',
+      'v2.seo.mapAltAfter': 'Local-SEO-Heatmap nachher: überwiegend grün',
       'v2.ads.phase': 'Phase 3 · Google Ads',
       'v2.ads.title': 'Eine Kampagne. Vier Zahlen, die zählen.',
       'v2.ads.text': 'Dieselbe Search-Kampagne. Vorher: Klicks ohne Pipeline. Nachher: Anfragen, die der Vertrieb tatsächlich angenommen hat.',
@@ -648,7 +650,7 @@
       'v2.talk.phase': 'Wenn Sie soweit sind',
       'v2.talk.title': 'Lassen Sie uns reden.',
       'v2.talk.text': 'Dreißig Minuten, kein Pitch-Deck. Wir ziehen Ihre Rankings live, zeigen wo Anfragen verloren gehen, und sagen geradeheraus, ob wir helfen können.',
-      'v2.talk.cta': 'Kostenloses Strategiegespräch buchen (30 Min.)',
+      'v2.talk.cta': 'Kostenloses Strategiegespräch',
     },
   };
 
@@ -689,6 +691,12 @@
       const key = el.getAttribute('data-i18n-placeholder');
       const text = translations[lang]?.[key];
       if (text) el.setAttribute('placeholder', text);
+    });
+
+    document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-alt');
+      const text = translations[lang]?.[key];
+      if (text) el.setAttribute('alt', text);
     });
 
     document.querySelectorAll('.lang-btn').forEach((btn) => {

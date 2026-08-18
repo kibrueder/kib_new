@@ -169,6 +169,36 @@
   }
 }
 
+/* Vector-sharp wordmark: the logo package files are auto-traced and look jagged at any size. */
+.site-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  text-decoration: none;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.dark .site-logo {
+  color: #ffffff;
+}
+.site-logo-ki {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: 0.12em;
+  font-variation-settings: "opsz" 72, "SOFT" 0, "WONK" 0;
+}
+.site-logo-br {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-weight: 500;
+  font-size: 0.42rem;
+  letter-spacing: 0.46em;
+  margin-top: 0.18rem;
+  padding-left: 0.46em;
+}
+
 /* Shared card hover: same feel as homepage service cards.
    Unlayered so border color wins over Tailwind dark:border-* utilities. */
 .hover-card {
