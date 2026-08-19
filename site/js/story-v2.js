@@ -13,18 +13,17 @@
   let currentIndex = 0;
   let wordTimer = null;
 
-  function t(key) {
-    if (typeof window.t === 'function') return window.t(key);
-    return key;
-  }
-
   function pad(n) {
     return ('0' + (n + 1)).slice(-2);
   }
 
   function getWord(panel) {
     const key = panel.getAttribute('data-story-word');
-    return key ? t(key) : '';
+    if (typeof window.t === 'function' && key) {
+      const translated = window.t(key);
+      if (translated && translated !== key) return translated;
+    }
+    return panel.getAttribute('data-story-word-text') || (stageWord ? stageWord.textContent : '') || '';
   }
 
   function fitStageWord() {
@@ -88,7 +87,7 @@
     }, 280);
   }
 
-  if (railEl) {
+  if (railEl && !railEl.children.length) {
     panels.forEach(function (_, i) {
       const tick = document.createElement('i');
       if (i === 0) tick.className = 'is-on';
@@ -350,7 +349,9 @@
     });
   }
 
-  if (typeof window.applyLanguage === 'function') {
+  function hookI18n() {
+    if (typeof window.applyLanguage !== 'function' || window.__storyI18nHooked) return;
+    window.__storyI18nHooked = true;
     const origApply = window.applyLanguage;
     window.applyLanguage = function (lang) {
       origApply(lang);
@@ -365,4 +366,7 @@
       if (visibleProof) resetAndAnimatePanel(visibleProof);
     };
   }
+
+  hookI18n();
+  document.addEventListener('i18n-ready', hookI18n);
 })();

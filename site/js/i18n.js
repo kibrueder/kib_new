@@ -266,7 +266,7 @@
       'v2.hero.stat4': 'Ad spend',
       'v2.hero.statCap': 'zivaclean local SEO, Feb–Jul 2026. Rankings from heatmap tracking, no paid ads.',
       'v2.web.phase': 'Phase 1 · A website that captures leads',
-      'v2.web.title': 'First, your website starts earning its keep.',
+      'v2.web.title': 'Turn visitors into customers by guiding them toward action.',
       'v2.web.text': 'Most local business sites are digital business cards. We build lead machines: clear calls to action, tap to call, forms that hit your phone the moment they’re sent. Working for you 24/7.',
       'v2.web.stat1': 'Website visitors in the first month',
       'v2.web.stat2': 'Enquiries generated',
@@ -596,7 +596,7 @@
       'v2.hero.stat4': 'Werbekosten',
       'v2.hero.statCap': 'zivaclean Local SEO, Feb.–Jul. 2026. Rankings aus Heatmap-Tracking – ohne bezahlte Anzeigen.',
       'v2.web.phase': 'Phase 1 · Website, die Anfragen bringt',
-      'v2.web.title': 'Zuerst verdient Ihre Website ihr Geld.',
+      'v2.web.title': 'Vom Besucher zum Kunden.',
       'v2.web.text': 'Die meisten Firmenwebsites sind digitale Visitenkarten. Wir bauen Lead-Maschinen: klare CTAs, Klick zum Anruf, Formulare, die sofort aufs Handy gehen. Rund um die Uhr, auch wenn Sie unterwegs sind.',
       'v2.web.stat1': 'Website-Besucher im ersten Monat',
       'v2.web.stat2': 'Generierte Anfragen',
@@ -708,15 +708,9 @@
     });
   }
 
-  document.querySelectorAll('.lang-btn').forEach((btn) => {
-    btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
-  });
-
   window.t = (key) => translations[current]?.[key] || translations.de[key] || '';
   window.applyLanguage = applyLanguage;
 
   applyLanguage(current);
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => applyLanguage(current));
-  }
+  document.dispatchEvent(new Event('i18n-ready'));
 })();

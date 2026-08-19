@@ -78,7 +78,7 @@ schema:
         <p class="text-red-700 dark:text-red-300" data-i18n="contact.error.text">Das Formular konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@kibrueder.de.</p>
       </div>
 
-      <form id="contact-form" name="contact" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field" class="space-y-6" novalidate>
+      <form id="contact-form" name="contact" method="POST" action="/kontakt/" netlify data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
         <input type="hidden" name="form-name" value="contact" />
         <p class="hidden absolute -left-[9999px]" aria-hidden="true">
           <label>Don’t fill this out: <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label>
