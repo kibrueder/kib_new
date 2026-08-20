@@ -48,11 +48,11 @@
         zivaclean Local SEO, Feb.–Jul. 2026. Rankings aus Heatmap-Tracking – ohne bezahlte Anzeigen.
       </p>
       <div class="story-cta-wrap story-cta-wrap--block">
-        <svg class="story-cta-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <svg class="story-cta-arrow story-cta-arrow--side" viewBox="0 0 100 100" fill="none" aria-hidden="true">
           <path d="M84 10 C 72 46, 50 62, 22 72" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
           <path d="M36 59 L 22 72 L 40 79" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-        <a href="/kontakt/" class="story-live-cta" data-i18n="v2.hero.cta">Kostenloses Strategiegespräch</a>
+        <a href="/kontakt/" class="story-live-cta" data-i18n="v2.hero.cta">Kostenloses Gespräch</a>
       </div>
     </div>
   </section>
@@ -109,18 +109,14 @@
       </p>
 
       <div class="story-map-block">
-        <p class="story-map-label">
-          <span data-story-map-label="before" data-i18n="v2.seo.mapLabelBefore">Vorher. Google-Maps-Ranking nach Gebiet</span>
-          <span data-story-map-label="after" class="hidden" data-i18n="v2.seo.mapLabelAfter">Nachher. Google-Maps-Ranking nach Gebiet</span>
-        </p>
-        <figure class="story-map-frame">
-          <img data-story-map-layer="before" src="/case-studies/local-seo/ranking-before.png" alt="Local-SEO-Heatmap vorher: überwiegend rot und orange" data-i18n-alt="v2.seo.mapAltBefore" class="story-map-img is-active" width="1484" height="1226" loading="lazy" decoding="async" />
-          <img data-story-map-layer="after" src="/case-studies/local-seo/ranking-after.png" alt="Local-SEO-Heatmap nachher: überwiegend grün" data-i18n-alt="v2.seo.mapAltAfter" class="story-map-img" width="1484" height="1226" loading="lazy" decoding="async" fetchpriority="low" />
+        <p class="story-map-label" data-i18n="v2.seo.mapLabel">Google-Maps-Ranking nach Gebiet, dieselbe Stadt, fünf Monate später</p>
+        <figure class="story-map-frame" id="story-map-frame">
+          <img class="story-map-img story-map-img--before" src="/case-studies/local-seo/ranking-before.webp" alt="Local-SEO-Heatmap vorher: überwiegend rot und orange" data-i18n-alt="v2.seo.mapAltBefore" width="1000" height="827" loading="lazy" decoding="async" />
+          <img class="story-map-img story-map-img--after" src="/case-studies/local-seo/ranking-after.webp" alt="Local-SEO-Heatmap nachher: überwiegend grün" data-i18n-alt="v2.seo.mapAltAfter" width="1000" height="827" loading="lazy" decoding="async" />
+          <span class="story-map-seam" aria-hidden="true"></span>
+          <span class="story-map-tag story-map-tag--before" aria-hidden="true" data-i18n="v2.seo.mapBefore">Vorher</span>
+          <span class="story-map-tag story-map-tag--after" aria-hidden="true" data-i18n="v2.seo.mapAfter">Nachher</span>
         </figure>
-        <button type="button" class="story-map-toggle" id="story-map-toggle-btn" aria-pressed="false">
-          <span data-story-map-toggle="after" data-i18n="v2.seo.toggleAfter">Nachher</span>
-          <span data-story-map-toggle="before" class="hidden" data-i18n="v2.seo.toggleBefore">Vorher</span>
-        </button>
       </div>
     </div>
   </section>
@@ -294,13 +290,50 @@
       <p class="story-body story-body--center" data-i18n="v2.talk.text">
         Dreißig Minuten, kein Pitch-Deck. Wir ziehen Ihre Rankings live, zeigen wo Anfragen verloren gehen, und sagen geradeheraus, ob wir helfen können.
       </p>
-      <div class="story-cta-wrap story-cta-wrap--center">
-        <svg class="story-cta-arrow" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <path d="M84 10 C 72 46, 50 62, 22 72" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
-          <path d="M36 59 L 22 72 L 40 79" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <a href="/kontakt/" class="story-live-cta" data-i18n="v2.talk.cta">Kostenloses Strategiegespräch</a>
+
+      <div id="story-success" class="story-form-note story-form-note--ok hidden">
+        <strong data-i18n="contact.success.title">Vielen Dank!</strong>
+        <span data-i18n="contact.success.text">Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns in Kürze bei Ihnen.</span>
       </div>
+      <div id="story-error" class="story-form-note story-form-note--bad hidden">
+        <strong data-i18n="contact.error.title">Fehler</strong>
+        <span data-i18n="contact.error.text">Das Formular konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie an info@kibrueder.de.</span>
+      </div>
+
+      <form id="story-form" name="contact" method="POST" action="/kontakt/" data-netlify="true" netlify-honeypot="bot-field" class="story-form">
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="source" value="startseite" />
+        <p class="story-form-honey" aria-hidden="true">
+          <label>Don’t fill this out: <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+        <div id="story-form-fields" class="story-form-fields">
+          <div class="story-form-row">
+            <label class="story-field">
+              <span class="story-field-l" data-i18n="v2.talk.name">Name</span>
+              <input type="text" name="full_name" required autocomplete="name" class="story-input" />
+              <span data-error="full_name" class="story-field-err hidden" data-i18n="contact.form.errorName">Bitte Namen angeben</span>
+            </label>
+            <label class="story-field">
+              <span class="story-field-l" data-i18n="v2.talk.email">E-Mail</span>
+              <input type="email" name="email" required autocomplete="email" class="story-input" />
+              <span data-error="email" class="story-field-err hidden" data-i18n="contact.form.errorEmail">Bitte gültige E-Mail angeben</span>
+            </label>
+          </div>
+          <label class="story-field">
+            <span class="story-field-l" data-i18n="v2.talk.phone">Telefon (optional, für den schnellen Rückruf)</span>
+            <input type="tel" name="phone_number" autocomplete="tel" class="story-input" />
+          </label>
+          <button type="submit" class="story-live-cta story-form-submit" data-i18n="v2.talk.cta">Kostenloses Gespräch</button>
+        </div>
+      </form>
+
+      <p class="story-form-reassure" data-i18n="v2.talk.reassure">
+        Antwort innerhalb von 24 Stunden · kein Verkaufsgespräch · keine Vertragsbindung
+      </p>
+      <p class="story-form-alt">
+        <span data-i18n="v2.talk.callAlt">Lieber direkt sprechen?</span>
+        <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>
+      </p>
     </div>
   </section>
 

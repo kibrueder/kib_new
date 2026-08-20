@@ -9,7 +9,7 @@
   const stageWord = document.getElementById('story-stage-word');
   const stageNum = document.getElementById('story-stage-num');
   const railEl = document.getElementById('story-rail');
-  let mapShowing = 'before';
+  const mapFrame = document.getElementById('story-map-frame');
   let currentIndex = 0;
   let wordTimer = null;
 
@@ -327,26 +327,57 @@
     counters.forEach(animateCount);
   }
 
-  function setMap(which) {
-    mapShowing = which;
-    root.querySelectorAll('[data-story-map-layer]').forEach(function (img) {
-      img.classList.toggle('is-active', img.getAttribute('data-story-map-layer') === which);
-    });
-    root.querySelectorAll('[data-story-map-label]').forEach(function (label) {
-      label.classList.toggle('hidden', label.getAttribute('data-story-map-label') !== which);
-    });
-    root.querySelectorAll('[data-story-map-toggle]').forEach(function (label) {
-      label.classList.toggle('hidden', label.getAttribute('data-story-map-toggle') === which);
-    });
-    const toggleBtn = root.querySelector('#story-map-toggle-btn');
-    if (toggleBtn) toggleBtn.setAttribute('aria-pressed', which === 'after' ? 'true' : 'false');
+  // The after-heatmap wipes across the before-heatmap when the panel comes into
+  // view, so the red-to-green change reads as one movement. Panels snap on
+  // desktop, so this is timed rather than tied to scroll position.
+  let mapRevealFrame = null;
+
+  function setMapReveal(value) {
+    if (mapFrame) mapFrame.style.setProperty('--story-map-reveal', String(value));
   }
 
-  const mapToggle = root.querySelector('#story-map-toggle-btn');
-  if (mapToggle) {
-    mapToggle.addEventListener('click', function () {
-      setMap(mapShowing === 'before' ? 'after' : 'before');
-    });
+  function animateMapReveal() {
+    if (!mapFrame) return;
+    if (reduceMotion) {
+      setMapReveal(1);
+      return;
+    }
+
+    cancelAnimationFrame(mapRevealFrame);
+    const duration = 1800;
+    // Hold on the red heatmap briefly so the starting point registers.
+    const start = performance.now() + 450;
+
+    function frame(now) {
+      const t = Math.max(0, Math.min(1, (now - start) / duration));
+      const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      setMapReveal(eased);
+      if (t < 1) mapRevealFrame = requestAnimationFrame(frame);
+    }
+
+    mapRevealFrame = requestAnimationFrame(frame);
+  }
+
+  if (mapFrame) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      setMapReveal(1);
+    } else {
+      setMapReveal(0);
+      const mapSpy = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateMapReveal();
+            } else {
+              cancelAnimationFrame(mapRevealFrame);
+              setMapReveal(0);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      mapSpy.observe(mapFrame);
+    }
   }
 
   function hookI18n() {

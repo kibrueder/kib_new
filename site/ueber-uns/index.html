@@ -6,66 +6,66 @@ bilingual: true
 hasForms: false
 permalink: /ueber-uns/
 ---
-<div class="pt-20">
-  <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
-    <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center" data-i18n="about.title">
+<main class="inner-page-main">
+  <div class="mb-16 text-center">
+    <h1 data-i18n="about.title">
       Über KI Brueder
     </h1>
+  </div>
 
-    <div class="max-w-3xl mx-auto">
-      <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8" data-i18n="about.description">
-        Wir sind Brüder, die sich auf Local SEO und Marketing spezialisiert haben und Unternehmen dabei helfen, durch effektive digitale Marketing-Lösungen effizient zu skalieren. Unsere Mission ist es, Ihre Online-Sichtbarkeit zu maximieren und Wachstumspotenzial freizusetzen.
-      </p>
+  <div class="max-w-3xl mx-auto">
+    <p class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8" data-i18n="about.description">
+      Wir sind Brüder, die sich auf Local SEO und Marketing spezialisiert haben und Unternehmen dabei helfen, durch effektive digitale Marketing-Lösungen effizient zu skalieren. Unsere Mission ist es, Ihre Online-Sichtbarkeit zu maximieren und Wachstumspotenzial freizusetzen.
+    </p>
 
-      <div class="grid gap-8 mt-12">
-        <section class="hover-card bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-800">
-          <h2 class="text-2xl font-bold mb-4" data-i18n="about.mission.title">Unsere Mission</h2>
-          <p class="text-gray-600 dark:text-gray-400" data-i18n="about.mission.description">
-            Unternehmen mit modernsten Local SEO und Marketing-Lösungen zu verbessern, die Wachstum, Sichtbarkeit und Innovation vorantreiben.
-          </p>
-        </section>
+    <div class="grid gap-8 mt-12">
+      <section class="hover-card bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-800">
+        <h2 class="text-2xl font-bold mb-4" data-i18n="about.mission.title">Unsere Mission</h2>
+        <p class="text-gray-600 dark:text-gray-400" data-i18n="about.mission.description">
+          Unternehmen mit modernsten Local SEO und Marketing-Lösungen zu verbessern, die Wachstum, Sichtbarkeit und Innovation vorantreiben.
+        </p>
+      </section>
 
-        <section class="hover-card bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-800">
-          <h2 class="text-2xl font-bold mb-4" data-i18n="about.values.title">Unsere Werte</h2>
-          <ul class="space-y-4 text-gray-600 dark:text-gray-400">
-            <li class="flex items-start gap-3">
-              <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
-              <span data-i18n="about.values.innovation">Immer die neuesten KI-Modelle und Updates aus den amerikanischen Märkten verwenden</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
-              <span data-i18n="about.values.customer">Kundenerfolg steht an erster Stelle</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
-              <span data-i18n="about.values.improvement">Kontinuierliche Verbesserung</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
-              <span data-i18n="about.values.ethical">Ethische KI-Entwicklung</span>
-            </li>
-          </ul>
-        </section>
-      </div>
-
-      <section class="mt-16">
-        <h2 class="text-3xl font-bold mb-8 text-center" data-i18n="about.team.title">Treffen Sie das Team</h2>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {% set name = "Saman Ghajar" %}
-          {% set role = "Mitgründer" %}
-          {% set roleKey = "about.team.coFounder" %}
-          {% set imageSrc = "/team-saman.webp" %}
-          {% set imageAlt = "Saman Ghajar - Mitgründer KI Brueder" %}
-          {% include "team-member.njk" %}
-
-          {% set name = "Nima Ghajar" %}
-          {% set role = "Mitgründer" %}
-          {% set roleKey = "about.team.coFounder" %}
-          {% set imageSrc = "/team-nima.webp" %}
-          {% set imageAlt = "Nima Ghajar - Mitgründer KI Brueder" %}
-          {% include "team-member.njk" %}
-        </div>
+      <section class="hover-card bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-800">
+        <h2 class="text-2xl font-bold mb-4" data-i18n="about.values.title">Unsere Werte</h2>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+          <li class="flex items-start gap-3">
+            <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
+            <span data-i18n="about.values.innovation">Immer die neuesten KI-Modelle und Updates aus den amerikanischen Märkten verwenden</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
+            <span data-i18n="about.values.customer">Kundenerfolg steht an erster Stelle</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
+            <span data-i18n="about.values.improvement">Kontinuierliche Verbesserung</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="hover-dot w-2 h-2 bg-yellow-500 rounded-full mt-2 shrink-0"></span>
+            <span data-i18n="about.values.ethical">Ethische KI-Entwicklung</span>
+          </li>
+        </ul>
       </section>
     </div>
+
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold mb-8 text-center" data-i18n="about.team.title">Treffen Sie das Team</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {% set name = "Saman Ghajar" %}
+        {% set role = "Mitgründer" %}
+        {% set roleKey = "about.team.coFounder" %}
+        {% set imageSrc = "/team-saman.webp" %}
+        {% set imageAlt = "Saman Ghajar - Mitgründer KI Brueder" %}
+        {% include "team-member.njk" %}
+
+        {% set name = "Nima Ghajar" %}
+        {% set role = "Mitgründer" %}
+        {% set roleKey = "about.team.coFounder" %}
+        {% set imageSrc = "/team-nima.webp" %}
+        {% set imageAlt = "Nima Ghajar - Mitgründer KI Brueder" %}
+        {% include "team-member.njk" %}
+      </div>
+    </section>
   </div>
-</div>
+</main>

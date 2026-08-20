@@ -542,6 +542,8 @@ html:not(.no-js) [data-animate] {
   --story-card-border: rgba(255, 255, 255, 0.1);
   --story-map-bg: #0a0a0a;
   --story-map-border: rgba(255, 255, 255, 0.1);
+  --story-input-bg: rgba(255, 255, 255, 0.04);
+  --story-input-border: rgba(255, 255, 255, 0.16);
   --story-quote: #d4d4d4;
   --story-nav-bg: rgba(0, 0, 0, 0.92);
   --story-nav-border: rgba(255, 255, 255, 0.08);
@@ -588,6 +590,8 @@ html:not(.dark) .story-v2-body {
   --story-card-border: rgba(0, 0, 0, 0.08);
   --story-map-bg: #fff;
   --story-map-border: rgba(0, 0, 0, 0.1);
+  --story-input-bg: #fff;
+  --story-input-border: rgba(0, 0, 0, 0.18);
   --story-quote: #374151;
   --story-nav-bg: rgba(255, 255, 255, 0.92);
   --story-nav-border: rgba(0, 0, 0, 0.08);
@@ -733,15 +737,13 @@ html.light .story-v2-body #main-nav #theme-toggle-mobile .theme-icon-sun {
   border-color: var(--story-nav-border) !important;
 }
 
-.story-v2-body .story-cta-btn,
-.story-v2-body .story-map-toggle {
+.story-v2-body .story-cta-btn {
   color: var(--story-btn-text) !important;
   font-weight: 700;
 }
 
 .story-v2-body .story-btn,
-.story-v2-body a.story-cta-btn:hover,
-.story-v2-body .story-map-toggle:hover {
+.story-v2-body a.story-cta-btn:hover {
   color: var(--story-btn-text) !important;
 }
 
@@ -1328,6 +1330,21 @@ html:not(.dark) .story-proof-stats {
   50% { transform: translate(-7px, 7px) rotate(-6deg); }
 }
 
+/* Beside the button instead of above it, so it never crosses the caption.
+   Rotated so the arrowhead still points at the button. */
+.story-cta-arrow--side {
+  right: auto;
+  left: calc(100% + 0.5rem);
+  top: 50%;
+  margin-top: -31px;
+  animation-name: storyCtaArrowNudgeSide;
+}
+
+@keyframes storyCtaArrowNudgeSide {
+  0%, 100% { transform: rotate(45deg) translate(0, 0); }
+  50% { transform: rotate(45deg) translate(-7px, 7px); }
+}
+
 .story-live-cta {
   display: inline-block;
   position: relative;
@@ -1363,7 +1380,153 @@ html:not(.dark) .story-proof-stats {
   color: var(--story-btn-text) !important;
 }
 
-/* Map */
+/* Inline lead form in the closing panel */
+.story-form {
+  margin-top: 1.75rem;
+  text-align: left;
+}
+
+.story-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.story-form-row {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 560px) {
+  .story-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.story-field {
+  display: block;
+}
+
+.story-field-l {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--story-subtle);
+  margin-bottom: 0.4rem;
+}
+
+.story-input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  font-size: 1rem;
+  color: var(--story-fg);
+  background: var(--story-input-bg);
+  border: 1px solid var(--story-input-border);
+  border-radius: 0.35rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.story-input:focus {
+  border-color: var(--story-accent);
+  box-shadow: 0 0 0 3px rgba(234, 140, 28, 0.22);
+}
+
+/* :not(.hidden) so the Tailwind utility still wins when JS hides the message */
+.story-field-err:not(.hidden) {
+  display: block;
+}
+
+.story-field-err {
+  font-size: 0.8rem;
+  color: #f87171;
+  margin-top: 0.3rem;
+}
+
+.story-form-submit {
+  width: 100%;
+  margin-top: 0.35rem;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+}
+
+.story-form-honey {
+  position: absolute;
+  left: -9999px;
+}
+
+.story-form-note {
+  margin-bottom: 1.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.35rem;
+  font-size: 0.95rem;
+  text-align: left;
+  border: 1px solid;
+}
+
+.story-form-note strong {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.story-form-note--ok {
+  color: #86efac;
+  border-color: rgba(134, 239, 172, 0.35);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.story-form-note--bad {
+  color: #fca5a5;
+  border-color: rgba(252, 165, 165, 0.35);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.story-form-reassure {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--story-subtle);
+}
+
+.story-form-alt {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--story-subtle);
+}
+
+.story-form-alt a {
+  color: var(--story-accent-bright);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.story-form-alt a:hover {
+  text-decoration: underline;
+}
+
+html.light .story-form-note--ok,
+html:not(.dark) .story-form-note--ok {
+  color: #15803d;
+  border-color: rgba(21, 128, 61, 0.3);
+  background: rgba(34, 197, 94, 0.1);
+}
+
+html.light .story-form-note--bad,
+html:not(.dark) .story-form-note--bad,
+html.light .story-field-err,
+html:not(.dark) .story-field-err {
+  color: #b91c1c;
+}
+
+html.light .story-form-note--bad,
+html:not(.dark) .story-form-note--bad {
+  border-color: rgba(185, 28, 28, 0.3);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* Map: scroll-driven before/after reveal */
 .story-map-block {
   margin-top: 1.5rem;
 }
@@ -1375,44 +1538,64 @@ html:not(.dark) .story-proof-stats {
 }
 
 .story-map-frame {
+  --story-map-reveal: 1;
+  position: relative;
   border: 1px solid var(--story-map-border);
   border-radius: 0.75rem;
   overflow: hidden;
   background: var(--story-map-bg);
-  margin-bottom: 1rem;
+  max-width: 27rem;
 }
 
 .story-map-img {
-  display: none;
+  display: block;
   width: 100%;
   height: auto;
 }
 
-.story-map-img.is-active {
-  display: block;
+.story-map-img--after {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc((1 - var(--story-map-reveal)) * 100%) 0 0);
 }
 
-.story-map-toggle {
-  display: inline-block;
-  font-size: 0.95rem;
+.story-map-seam {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--story-map-reveal) * 100%);
+  width: 2px;
+  margin-left: -1px;
+  background: var(--story-accent-bright);
+  box-shadow: 0 0 12px rgba(234, 140, 28, 0.8);
+  opacity: calc(min(var(--story-map-reveal), 1 - var(--story-map-reveal)) * 4);
+}
+
+.story-map-tag {
+  position: absolute;
+  top: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  color: var(--story-btn-text);
-  background: var(--story-btn);
-  border: none;
-  padding: 0.65rem 1.1rem;
-  border-radius: 0.35rem;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 0 20px rgba(234, 140, 28, 0.35);
-  transition: background 0.2s ease;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.55rem;
+  border-radius: 0.25rem;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+}
+
+.story-map-tag--before {
+  right: 0.6rem;
+  opacity: calc(1 - var(--story-map-reveal));
+}
+
+.story-map-tag--after {
+  left: 0.6rem;
+  opacity: var(--story-map-reveal);
 }
 
 .story-map-block + .story-case-note {
   margin-top: 1.25rem;
-}
-
-.story-map-toggle:hover {
-  background: var(--story-btn-hover);
 }
 
 /* Proof */
@@ -1552,6 +1735,11 @@ html:not(.dark) .story-proof-stats {
     min-height: auto;
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  /* Keep the submit button clear of the sticky call bar */
+  #story-talk {
+    padding-bottom: 6.5rem;
   }
 
   html:has(.story-v2-body) {
@@ -1747,4 +1935,288 @@ html:not(.dark) .story-proof-stats {
   font-weight: 650;
   font-size: 1.45rem;
   margin-bottom: 0.5rem;
+}
+
+.inner-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inner-form-row {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .inner-form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.inner-form-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+}
+
+.dark .inner-form-label {
+  color: #8a8a8a;
+}
+
+.inner-form-input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #111827;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 0.35rem;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.dark .inner-form-input {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.inner-form-input:focus {
+  border-color: var(--brand-gold);
+  box-shadow: 0 0 0 3px rgba(234, 140, 28, 0.22);
+}
+
+.inner-form-err {
+  font-size: 0.8rem;
+  color: #b91c1c;
+  margin-top: 0.3rem;
+}
+
+.dark .inner-form-err {
+  color: #f87171;
+}
+
+.inner-form-submit {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--brand-gold-text);
+  background: var(--brand-gold);
+  border: none;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  box-shadow: 0 0 28px rgba(234, 140, 28, 0.4);
+  transition: background 0.2s ease;
+}
+
+.inner-form-submit:hover {
+  background: var(--brand-gold-hover);
+}
+
+.inner-form-reassure {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.dark .inner-form-reassure {
+  color: #8a8a8a;
+}
+
+.inner-page-main {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6.5rem 1rem 8rem;
+}
+
+@media (min-width: 768px) {
+  .inner-page-main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.inner-page-main h1 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.inner-page-main h2 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(1.65rem, 3vw, 2.25rem);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.inner-page-main h3 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-weight: 650;
+}
+
+.inner-page-main > .mb-16:first-child h1,
+.inner-page-hero h1 {
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.inner-page-main > .mb-16:first-child > p.text-xl,
+.inner-page-main > .mb-16:first-child > p.lead,
+.inner-page-hero > p.lead,
+.inner-page-hero > p.text-xl {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.dark .inner-page-main > .mb-16:first-child > p.text-xl,
+.dark .inner-page-main > .mb-16:first-child > p.lead,
+.dark .inner-page-hero > p.lead,
+.dark .inner-page-hero > p.text-xl {
+  color: #a8a8a8;
+}
+
+.inner-page-main--center {
+  text-align: center;
+}
+
+.inner-page-cta {
+  border: 1px solid rgba(234, 140, 28, 0.22);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+  margin-top: 2rem;
+}
+
+.dark .inner-page-cta {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.inner-page-cta h2 {
+  font-family: "Fraunces", "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 650;
+  margin-bottom: 1rem;
+}
+
+.inner-page-cta p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #4b5563;
+  max-width: 36rem;
+  margin: 0 auto 1.5rem;
+}
+
+.dark .inner-page-cta p {
+  color: #a8a8a8;
+}
+
+.inner-page-cta-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand-gold-text);
+  background: var(--brand-gold);
+  border-radius: 0.35rem;
+  box-shadow: 0 0 28px rgba(234, 140, 28, 0.4);
+  transition: background 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.inner-page-cta-btn:hover {
+  background: var(--brand-gold-hover);
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner-page-cta-btn:hover {
+    transform: none;
+  }
+}
+
+/* Sticky call/booking bar on phones */
+.mobile-cta-bar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-cta-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+  }
+
+  .dark .mobile-cta-bar {
+    background: rgba(0, 0, 0, 0.92);
+    border-top-color: rgba(255, 255, 255, 0.12);
+  }
+
+  body:not(:has(#contact-form)) {
+    padding-bottom: 4.5rem;
+  }
+
+  /* The cookie banner and the full contact form both own the bottom of the
+     screen when present, so the bar steps aside. */
+  body:has(#cookie-banner:not(.hidden)) .mobile-cta-bar,
+  body:has(#contact-form) .mobile-cta-bar {
+    display: none;
+  }
+
+  .mobile-cta-call,
+  .mobile-cta-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.8rem 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 0.35rem;
+    text-decoration: none;
+  }
+
+  .mobile-cta-call {
+    flex: 0 0 8rem;
+    color: #111827;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+  }
+
+  .dark .mobile-cta-call {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .mobile-cta-call svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .mobile-cta-primary {
+    flex: 1 1 auto;
+    color: var(--brand-gold-text);
+    background: var(--brand-gold);
+  }
 }

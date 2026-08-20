@@ -19,42 +19,43 @@ function scrollToFormFeedback(id) {
   el.focus({ preventScroll: true });
 }
 
-// Contact form 
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
+// Lead forms: the full one on /kontakt/ and the short one on the homepage.
+// Both post to the same Netlify form, so submissions land in one inbox.
+function initLeadForm({ formId, fieldsId, successId, errorId }) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    hideEl('contact-success');
-    hideEl('contact-error');
+    hideEl(successId);
+    hideEl(errorId);
 
-    const fd = new FormData(contactForm);
-    const data = {
-      full_name: String(fd.get('full_name') || '').trim(),
-      email: String(fd.get('email') || '').trim(),
-      company_name: String(fd.get('company_name') || '').trim(),
-      phone_number: String(fd.get('phone_number') || '').trim(),
-      service: String(fd.get('service') || '').trim(),
-      problems: String(fd.get('problems') || '').trim(),
-      found_us: String(fd.get('found_us') || '').trim(),
-      additional_info: String(fd.get('additional_info') || '').trim(),
-    };
-
-    const errors = {};
-    if (!data.full_name) errors.full_name = true;
-    if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) errors.email = true;
-    if (!data.company_name) errors.company_name = true;
-    if (!data.phone_number) errors.phone_number = true;
-    if (!data.service) errors.service = true;
-    if (!data.problems) errors.problems = true;
-    if (!data.found_us) errors.found_us = true;
-
-    contactForm.querySelectorAll('[data-error]').forEach((el) => el.classList.add('hidden'));
-    Object.keys(errors).forEach((key) => {
-      document.querySelector(`[data-error="${key}"]`)?.classList.remove('hidden');
+    const fd = new FormData(form);
+    const params = new URLSearchParams();
+    fd.forEach((value, key) => {
+      if (key === 'bot-field') return;
+      params.set(key, typeof value === 'string' ? value.trim() : value);
     });
-    if (Object.keys(errors).length) return;
+    params.set('form-name', 'contact');
 
-    const btn = contactForm.querySelector('[type="submit"]');
+    // Validate whatever the markup marks as required, so each form can differ.
+    const errors = [];
+    form.querySelectorAll('[required]').forEach((field) => {
+      const value = String(params.get(field.name) || '');
+      const invalid = field.type === 'email' ? !/\S+@\S+\.\S+/.test(value) : !value;
+      if (invalid) errors.push(field.name);
+    });
+
+    form.querySelectorAll('[data-error]').forEach((el) => el.classList.add('hidden'));
+    errors.forEach((name) => {
+      form.querySelector(`[data-error="${name}"]`)?.classList.remove('hidden');
+    });
+    if (errors.length) {
+      form.querySelector(`[name="${errors[0]}"]`)?.focus();
+      return;
+    }
+
+    const btn = form.querySelector('[type="submit"]');
     const original = btn?.textContent;
     if (btn) {
       btn.disabled = true;
@@ -62,25 +63,20 @@ if (contactForm) {
     }
 
     try {
-      // Netlify Forms (reliable email notifications via Netlify dashboard)
-      const params = new URLSearchParams();
-      params.set('form-name', 'contact');
-      Object.entries(data).forEach(([key, value]) => params.set(key, value));
-
       const res = await fetch('/kontakt/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: params.toString(),
       });
       if (!res.ok) throw new Error(`Status ${res.status}`);
-      contactForm.reset();
-      showEl('contact-success');
-      hideEl('contact-form-fields');
-      scrollToFormFeedback('contact-success');
+      form.reset();
+      showEl(successId);
+      hideEl(fieldsId);
+      scrollToFormFeedback(successId);
     } catch (err) {
       console.error(err);
-      showEl('contact-error');
-      scrollToFormFeedback('contact-error');
+      showEl(errorId);
+      scrollToFormFeedback(errorId);
     } finally {
       if (btn) {
         btn.disabled = false;
@@ -89,6 +85,20 @@ if (contactForm) {
     }
   });
 }
+
+initLeadForm({
+  formId: 'contact-form',
+  fieldsId: 'contact-form-fields',
+  successId: 'contact-success',
+  errorId: 'contact-error',
+});
+
+initLeadForm({
+  formId: 'story-form',
+  fieldsId: 'story-form-fields',
+  successId: 'story-success',
+  errorId: 'story-error',
+});
 
 // Newsletter form 
 const newsletterForm = document.getElementById('newsletter-form');

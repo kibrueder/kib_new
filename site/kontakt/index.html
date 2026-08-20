@@ -23,7 +23,7 @@ schema:
       "@id": "https://kibrueder.de/#business"
       "name": "KI Brueder"
       "url": "https://kibrueder.de/"
-      "logo": "https://kibrueder.de/logo-og.png"
+      "logo": "https://kibrueder.de/logo-light-bg.png"
       "email": "info@kibrueder.de"
       "telephone": "+49-178-1698587"
       "priceRange": "$$"
@@ -56,16 +56,16 @@ schema:
         Dreißig Minuten, kein Pitch-Deck. Wir ziehen Ihre Rankings live, zeigen wo Anfragen verloren gehen, und sagen geradeheraus, ob wir helfen können.
       </p>
       <ul class="inner-contact-steps">
-        <li data-i18n="contact.step1">Sie füllen das Formular aus, Name, Firma, Telefon und woran es hakt.</li>
+        <li data-i18n="contact.step1">Sie schicken uns Name und E-Mail, mehr braucht es nicht.</li>
         <li data-i18n="contact.step2">Wir prüfen vor dem Gespräch Rankings, Wettbewerb und Ihre Angaben.</li>
         <li data-i18n="contact.step3">Wir melden uns zurück und holen Sie in den Kalender.</li>
       </ul>
     </div>
 
     <div class="inner-form-card">
-      <h2 data-i18n="contact.form.title">Kostenloses Gespräch anfragen</h2>
+      <h2 data-i18n="contact.form.title">Kostenloses Gespräch</h2>
       <p class="text-gray-600 dark:text-gray-400 mb-8" data-i18n="contact.form.subtitle">
-        Diese Felder brauchen wir, um vorab recherchieren und Sie sinnvoll zurückrufen zu können.
+        Zwei Pflichtfelder. Alles Weitere nur, wenn Sie möchten.
       </p>
 
       <div id="contact-success" class="hidden bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 mb-8">
@@ -83,75 +83,60 @@ schema:
         <p class="hidden absolute -left-[9999px]" aria-hidden="true">
           <label>Don’t fill this out: <input type="text" name="bot-field" tabindex="-1" autocomplete="off" /></label>
         </p>
-        <div id="contact-form-fields" class="space-y-6">
-          <div class="grid md:grid-cols-2 gap-6">
+        <div id="contact-form-fields" class="inner-form-fields">
+          <div class="inner-form-row">
             <div>
-              <label for="full_name" class="block text-sm font-medium mb-2" data-i18n="contact.form.name">* Vollständiger Name</label>
-              <input type="text" id="full_name" name="full_name" required autocomplete="name"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none" />
-              <p data-error="full_name" class="hidden text-red-500 text-sm mt-1" data-i18n="contact.form.errorName">Bitte Namen angeben</p>
+              <label for="full_name" class="inner-form-label" data-i18n="contact.form.name">Name *</label>
+              <input type="text" id="full_name" name="full_name" required autocomplete="name" class="inner-form-input" />
+              <p data-error="full_name" class="inner-form-err hidden" data-i18n="contact.form.errorName">Bitte Namen angeben</p>
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium mb-2" data-i18n="contact.form.email">* E-Mail</label>
-              <input type="email" id="email" name="email" required autocomplete="email"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none" />
-              <p data-error="email" class="hidden text-red-500 text-sm mt-1" data-i18n="contact.form.errorEmail">Bitte gültige E-Mail angeben</p>
+              <label for="email" class="inner-form-label" data-i18n="contact.form.email">E-Mail *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" class="inner-form-input" />
+              <p data-error="email" class="inner-form-err hidden" data-i18n="contact.form.errorEmail">Bitte gültige E-Mail angeben</p>
             </div>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-6">
+          <div class="inner-form-row">
             <div>
-              <label for="company_name" class="block text-sm font-medium mb-2" data-i18n="contact.form.company">* Unternehmen</label>
-              <input type="text" id="company_name" name="company_name" required autocomplete="organization"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none" />
-              <p data-error="company_name" class="hidden text-red-500 text-sm mt-1" data-i18n="contact.form.errorCompany">Bitte Unternehmen angeben</p>
+              <label for="phone_number" class="inner-form-label" data-i18n="contact.form.phone">Telefon</label>
+              <input type="tel" id="phone_number" name="phone_number" autocomplete="tel" class="inner-form-input" />
             </div>
             <div>
-              <label for="phone_number" class="block text-sm font-medium mb-2" data-i18n="contact.form.phone">* Telefon</label>
-              <input type="tel" id="phone_number" name="phone_number" required autocomplete="tel"
-                class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none" />
-              <p data-error="phone_number" class="hidden text-red-500 text-sm mt-1" data-i18n="contact.form.errorPhone">Bitte Telefon angeben</p>
+              <label for="company_name" class="inner-form-label" data-i18n="contact.form.company">Unternehmen</label>
+              <input type="text" id="company_name" name="company_name" autocomplete="organization" class="inner-form-input" />
             </div>
           </div>
 
           <div>
-            <label for="service" class="block text-sm font-medium mb-2" data-i18n="contact.form.service">* Dienstleistung</label>
-            <select id="service" name="service" required
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none">
+            <label for="service" class="inner-form-label" data-i18n="contact.form.service">Worum geht es?</label>
+            <select id="service" name="service" class="inner-form-input">
               <option value="" data-i18n="contact.form.serviceSelect">Bitte wählen</option>
-              <option value="ai">KI</option>
+              <option value="local-seo">Local SEO</option>
               <option value="seo">SEO</option>
-              <option value="ads">Ads</option>
+              <option value="google-ads">Google Ads</option>
+              <option value="meta-ads">Facebook / Meta Ads</option>
+              <option value="website">Website Erstellung</option>
+              <option value="gbp">Google Business Profile</option>
+              <option value="ai">KI Lösungen</option>
+              <option value="other" data-i18n="contact.form.serviceOther">Etwas anderes</option>
             </select>
-            <p data-error="service" class="hidden text-red-500 text-sm mt-1" data-i18n="contact.form.errorService">Bitte Dienstleistung wählen</p>
           </div>
 
           <div>
-            <label for="problems" class="block text-sm font-medium mb-2" data-i18n="contact.form.problems">* Welche Probleme möchten Sie lösen?</label>
-            <textarea id="problems" name="problems" rows="4" required
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none"
+            <label for="problems" class="inner-form-label" data-i18n="contact.form.problems">Woran hakt es gerade?</label>
+            <textarea id="problems" name="problems" rows="4" class="inner-form-input"
               data-i18n-placeholder="contact.form.problemsPlaceholder"
-              placeholder="Beschreiben Sie Ihre aktuellen Herausforderungen"></textarea>
-            <p data-error="problems" class="hidden text-red-500 text-sm mt-1" data-i18n="contact.form.errorProblems">Bitte ausfüllen</p>
+              placeholder="Ein oder zwei Sätze reichen, den Rest klären wir im Gespräch"></textarea>
           </div>
 
-          <div>
-            <label for="found_us" class="block text-sm font-medium mb-2" data-i18n="contact.form.foundUs">* Wie haben Sie uns gefunden?</label>
-            <textarea id="found_us" name="found_us" rows="2" required
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none"></textarea>
-            <p data-error="found_us" class="hidden text-red-500 text-sm mt-1" data-i18n="contact.form.errorFoundUs">Bitte ausfüllen</p>
-          </div>
-
-          <div>
-            <label for="additional_info" class="block text-sm font-medium mb-2" data-i18n="contact.form.additional">Weitere Informationen (optional)</label>
-            <textarea id="additional_info" name="additional_info" rows="3"
-              class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-yellow-500 outline-none"></textarea>
-          </div>
-
-          <button type="submit" data-i18n="contact.form.submit"
-            class="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-black px-8 py-4 rounded-lg font-semibold text-lg transition-colors">
-            Kostenloses Gespräch anfragen
+          <button type="submit" data-i18n="contact.form.submit" class="inner-form-submit">
+            Kostenloses Gespräch
           </button>
+
+          <p class="inner-form-reassure" data-i18n="contact.form.reassure">
+            Antwort innerhalb von 24 Stunden · kein Verkaufsgespräch · keine Vertragsbindung
+          </p>
         </div>
       </form>
     </div>

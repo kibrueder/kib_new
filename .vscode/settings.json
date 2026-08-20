@@ -1,4 +1,3 @@
 {
-  "npm.autoDetect": "off",
-  "task.autoDetect": "off"
+  "terminal.integrated.cwd": "${workspaceFolder}"
 }
