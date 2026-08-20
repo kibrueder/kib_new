@@ -13,6 +13,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "site/assets": "." });
   eleventyConfig.addPassthroughCopy({ "site/js": "js" });
+  eleventyConfig.addPassthroughCopy({ "public/googleda15a62353f95d40.html": "googleda15a62353f95d40.html" });
   eleventyConfig.addPassthroughCopy({ "public/zohoverify": "zohoverify" });
 
   eleventyConfig.addWatchTarget("./site/css/");
